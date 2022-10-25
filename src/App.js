@@ -1,21 +1,25 @@
-import Papa from "./components/Papa";
+import { useState } from 'react';
+
+
 
 const App = () => {
 
-  const v = 6;
+  const [v, setV] = useState(0);
+
+
+
+
+  const hacerCosas = () => {
+    setV(v + 1);
+    console.log(v)
+  }
+
   return (
-    <div className="box" >
+    <div >
 
-
-      <div style={{ background: 'red' }}>
-        <Papa valorQueVoyAPasar={v} v2={v} datosQueVienenDelHijo={(r) => alert(r)} >
-
-          El amor es sin duda lo mejor del mundo
-
-        </Papa>
-
-      </div>
-    </div>
+      {v}
+      <button onClick={hacerCosas}> Pulsar</button >
+    </div >
   );
 }
 
